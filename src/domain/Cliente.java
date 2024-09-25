@@ -7,6 +7,7 @@ public abstract class Cliente {
     public Cliente(String nome, String tipoCliente) {
         this.nome = nome;
         this.tipoCliente = tipoCliente;
+        System.out.println("Teste");
     }
 
     public String getNome() {
