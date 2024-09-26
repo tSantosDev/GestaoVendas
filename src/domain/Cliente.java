@@ -2,12 +2,11 @@ package domain;
 
 public abstract class Cliente {
     private String nome;
-    private String tipoCliente;
+    private Cliente cliente;
 
-    public Cliente(String nome, String tipoCliente) {
+    public Cliente(String nome, Cliente cliente) {
         this.nome = nome;
-        this.tipoCliente = tipoCliente;
-        System.out.println("Teste");
+        this.cliente = cliente;
     }
 
     public String getNome() {
@@ -16,14 +15,6 @@ public abstract class Cliente {
 
     public void setNome(String nome) {
         this.nome = nome;
-    }
-
-    public String getTipoCliente() {
-        return tipoCliente;
-    }
-
-    public void setTipoCliente(String tipoCliente) {
-        this.tipoCliente = tipoCliente;
     }
 
     public abstract void calculaDesconto();
