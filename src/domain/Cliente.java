@@ -2,11 +2,9 @@ package domain;
 
 public abstract class Cliente {
     private String nome;
-    private Cliente cliente;
 
-    public Cliente(String nome, Cliente cliente) {
+    public Cliente(String nome) {
         this.nome = nome;
-        this.cliente = cliente;
     }
 
     public String getNome() {
@@ -17,5 +15,5 @@ public abstract class Cliente {
         this.nome = nome;
     }
 
-    public abstract void calculaDesconto();
+    public abstract double calculaDesconto(Produto produto);
 }

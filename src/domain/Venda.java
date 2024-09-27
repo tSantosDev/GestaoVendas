@@ -10,16 +10,4 @@ public class Venda {
         this.produto = produto;
         this.pagamento = pagamento;
     }
-
-    public Cliente getCliente() {
-        return cliente;
-    }
-
-    public Produto getProduto() {
-        return produto;
-    }
-
-    public Pagamento getPagamento() {
-        return pagamento;
-    }
 }

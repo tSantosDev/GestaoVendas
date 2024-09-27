@@ -2,13 +2,14 @@ package domain;
 
 public class ClienteVip extends Cliente{
     public static final double CASHBACK = 0.07;
+    public static final double PORCENTAGEM_DESCONTO = 0.1;
 
-    public ClienteVip(String nome, String tipo) {
-        super(nome, tipo);
+    public ClienteVip(String nome) {
+        super(nome);
     }
 
     @Override
-    public void calculaDesconto() {
-
+    public double calculaDesconto(Produto produto) {
+        return produto.getPreco() - (produto.getPreco()*PORCENTAGEM_DESCONTO);
     }
 }

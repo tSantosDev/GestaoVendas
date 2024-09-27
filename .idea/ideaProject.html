@@ -1,0 +1,49 @@
+Sistema de Gestão de Vendas
+
+Descrição do Projeto
+Criar um sistema para gerenciar produtos, clientes e vendas. O sistema permitirá cadastrar produtos, registrar clientes, efetuar vendas e gerar relatórios de vendas.
+
+Conceitos de POO Utilizados
+
+Classes e Objetos:
+Produto, Cliente, Venda, Carrinho, GestorVendas X
+
+Encapsulamento:
+Atributos privados com métodos públicos para acesso e modificação. X
+
+Herança:
+Cliente pode ter subclasses como ClienteRegular, ClienteVIP com benefícios diferentes. X
+Benefício cliente vip: cashback de 7% X
+Benefício cliente regular: cashback de 4% X
+
+Polimorfismo:
+Métodos de cálculo de desconto diferentes nas subclasses de Cliente.
+
+Interface:
+Interface Pagamento com métodos como processarPagamento() X , implementada por diferentes formas de pagamento (Cartão, Boleto, etc.) X.
+
+Composição:
+Venda compõe Cliente, Produto e Pagamento. X
+
+Regras de Negócio
+
+Cadastro de Produtos:
+Cada produto deve ter nome, código, preço e estoque disponível. X
+
+Cadastro de Clientes:
+Clientes devem ter nome, ID, tipo e histórico de compras. X
+
+Processo de Venda:
+Adicionar produtos ao carrinho X, verificar disponibilidade no estoque.
+Aplicar descontos conforme o tipo de cliente. X
+Atualizar estoque após a confirmação da venda.
+
+Formas de Pagamento:
+Suportar múltiplas formas de pagamento, cada uma com suas particularidades.
+
+Relatórios:
+Gerar relatórios de vendas por período, por produto ou por cliente.
+
+Gestão de Estoque:
+Alertar quando um produto está com estoque baixo.
+Permitir a atualização de estoque manualmente ou através de vendas.
