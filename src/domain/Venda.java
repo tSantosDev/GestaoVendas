@@ -8,14 +8,21 @@ public class Venda {
 
     public Venda(Cliente cliente, Produto produto, Pagamento pagamento, int quantidadeProdutoComprado) {
         this.cliente = cliente;
-        if (produto.getEstoque() >= quantidadeProdutoComprado) {
-            this.produto = produto;
-        } else {
+
+        if (produto.getEstoque() < quantidadeProdutoComprado) {
             System.out.println("Estoque do produto " + produto.getNome() + " menor que a quantidade que deseja comprar.");
             return;
         }
-        this.pagamento = pagamento;
+
+        this.produto = produto;
+
+        if (quantidadeProdutoComprado <= 0) {
+            System.out.println("Quantidade do produto inválido");
+            return;
+        }
+
         this.quantidadeProdutoComprado = quantidadeProdutoComprado;
+        this.pagamento = pagamento;
     }
 
     public void finalizarVenda() {
