@@ -3,32 +3,20 @@ package domain;
 public class Venda {
     private Cliente cliente;
     private Produto produto;
-    private Pagamento pagamento;
+    private ProcessaPagamento processaPagamento;
     private int quantidadeProdutoComprado;
 
-    public Venda(Cliente cliente, Produto produto, Pagamento pagamento, int quantidadeProdutoComprado) {
+    public Venda(Cliente cliente, Produto produto, ProcessaPagamento processaPagamento, int quantidadeProdutoComprado) {
         this.cliente = cliente;
-
-        if (produto.getEstoque() < quantidadeProdutoComprado) {
-            System.out.println("Estoque do produto " + produto.getNome() + " menor que a quantidade que deseja comprar.");
-            return;
-        }
-
         this.produto = produto;
-
-        if (quantidadeProdutoComprado <= 0) {
-            System.out.println("Quantidade do produto inválido");
-            return;
-        }
-
         this.quantidadeProdutoComprado = quantidadeProdutoComprado;
-        this.pagamento = pagamento;
+        this.processaPagamento = processaPagamento;
     }
 
     public void finalizarVenda() {
         double valorTotal = calcularTotalVenda();
         System.out.println("O valor total da compra é de: " + valorTotal);
-        this.pagamento.processarPagamento();
+        this.processaPagamento.processarPagamento();
         atualizandoEstoque();
     }
 
@@ -65,11 +53,11 @@ public class Venda {
         this.produto = produto;
     }
 
-    public Pagamento getPagamento() {
-        return pagamento;
+    public ProcessaPagamento getPagamento() {
+        return processaPagamento;
     }
 
-    public void setPagamento(Pagamento pagamento) {
-        this.pagamento = pagamento;
+    public void setPagamento(ProcessaPagamento processaPagamento) {
+        this.processaPagamento = processaPagamento;
     }
 }
