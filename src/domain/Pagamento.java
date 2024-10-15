@@ -1,5 +1,4 @@
 package domain;
 
-public interface Pagamento {
-    public abstract void processarPagamento();
+public abstract class Pagamento implements ProcessaPagamento{
 }
